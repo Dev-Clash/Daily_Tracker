@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <button className="bg-blue-500">
-        Kasto Mula
+        Kasto Behen
       </button>
     </div>
   );
