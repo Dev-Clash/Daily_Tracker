@@ -28,7 +28,7 @@ if os.path.isfile(dotenv_file):
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # Instead of your actual secret key
-SECRET_KEY = os.environ['SECRET_KEY'] 
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -83,8 +83,12 @@ WSGI_APPLICATION = 'tracker_api.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'daily_tracker',
+        'USER': 'root',
+        'PASSWORD': os.environ['DB_PASSWORD'],
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
